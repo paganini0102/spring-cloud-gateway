@@ -39,11 +39,11 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.t
  * @author Spencer Gibb
  */
 public class Route implements Ordered {
-
+	/** 标识符，区别于其他Route */
 	private final String id;
-
+	/** 路由指向的目的地uri，即客户端请求最终被转发的目的地 */
 	private final URI uri;
-
+	/** 用于多个Route之间的排序，数值越小排序越靠前，匹配优先级越高 */
 	private final int order;
 
 	private final AsyncPredicate<ServerWebExchange> predicate;
